@@ -11,7 +11,7 @@ const MENU_DATA = {
   ],
   nonCoffee: [
     { id: 5, name: "COKELAT", price: "13K", best: false, desc: "Cokelat hitam premium pilihan yang dipadukan dengan susu segar, memberikan sensasi rasa cokelat yang mendalam, kental, dan mewah.", image: "https://picsum.photos/seed/chocolate/500/600" },
-    { id: 6, name: "MATCHA", price: "18K", best: true, desc: "Sajian Matcha spesial kami dengan foam lembut, diolah dengan resep rahasia Not Yet Coffee untuk rasa yang tak terlupakan.", image: "https://media.ais.studio/api/v1/attachments/80f76906-96ec-41e5-8208-8e6f1f44c4ec" },
+    { id: 6, name: "MATCHA", price: "18K", best: true, desc: "Sajian Matcha spesial kami dengan foam lembut, diolah dengan resep rahasia Not Yet Coffee untuk rasa yang tak terlupakan.", image: "https://media.ais.studio/api/v1/attachments/80f76906-96ec-41e5-8208-8e6f1f44c4ec/500/600" },
     { id: 7, name: "RED VELVET", price: "13K", best: false, desc: "Rasa kue Red Velvet yang kaya dan manis lembut dipadukan dengan susu krimi, menghadirkan sensasi makan kue dalam setiap tegukan.", image: "https://picsum.photos/seed/red-velvet/500/600" },
     { id: 10, name: "THAI TEA", price: "13K", best: false, desc: "Seduhan daun teh asli Thailand pilihan yang disajikan dengan kental manis dan evaporasi, menciptakan rasa teh yang unik dan menyegarkan.", image: "https://picsum.photos/seed/thai-tea/500/600" },
   ]
