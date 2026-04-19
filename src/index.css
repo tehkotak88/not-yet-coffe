@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --color-brand-red: #ED1C24;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-red text-white font-sans antialiased min-h-screen overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .jagged-price {
+    clip-path: polygon(
+      100% 50%, 94% 63%, 88% 75%, 75% 88%, 63% 94%, 50% 100%, 37% 94%, 25% 88%, 12% 75%, 6% 63%, 0% 50%, 6% 37%, 12% 25%, 25% 12%, 37% 6%, 50% 0%, 63% 6%, 75% 12%, 88% 25%, 94% 37%
+    );
+  }
+  
+  .gloss-effect {
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%);
+  }
+
+  .text-outline-white {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+  }
+}
+
