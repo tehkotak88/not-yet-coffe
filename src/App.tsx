@@ -4,16 +4,23 @@ import { Coffee, Instagram, MapPin, Clock, Star, Zap, X, Home, Info, Phone, Menu
 
 const MENU_DATA = {
   coffee: [
-    { id: 1, name: "KOPI NOT LATTE", price: "13K", best: false, desc: "Espresso double shot yang kuat dipadukan dengan susu segar yang dikukus hingga berbusa lembut, menciptakan tekstur creamy yang sempurna.", image: "https://drive.google.com/file/d/1_2wiIE1UZQjM_YSq38A2yERfjLPoq9jy/view?usp=sharing/500/600" },
-    { id: 2, name: "KOPI NOT AREN", price: "13K", best: true, desc: "Menu andalan kami: Perpaduan espresso lokal dengan gula aren organik murni dan sentuhan sea salt yang memberikan keseimbangan rasa manis dan gurih.", image: "https://picsum.photos/seed/coffee-aren/500/600" },
-    { id: 3, name: "KOPI NOT SUSU", price: "13K", best: false, desc: "Sentuhan rasa klasik yang membawa nostalgia, menggabungkan kopi hitam pekat dengan kental manis premium yang kaya rasa.", image: "https://picsum.photos/seed/coffee-milk/500/600" },
-    { id: 4, name: "AMERICANO", price: "10K", best: false, desc: "Ekstraksi espresso murni yang jernih menggunakan biji kopi pilihan house roast kami, disajikan untuk kesegaran rasa kopi yang jujur.", image: "https://picsum.photos/seed/americano/500/600" },
+    { id: 1, name: "KOPI NOT LATTE", price: "13K", best: false, desc: "Espresso double shot yang kuat dipadukan dengan susu segar yang dikukus hingga berbusa lembut, menciptakan tekstur creamy yang sempurna.", image: "../gambar/Kopi Not Latte.png" },
+    { id: 2, name: "Kopi Salted Caramel", price: "13K", best: true, desc: "Menu andalan kami: Perpaduan espresso lokal dengan gula aren organik murni dan sentuhan sea salt yang memberikan keseimbangan rasa manis dan gurih.", image: "../gambar/Kopi Salted Caramel.png" },
+    { id: 3, name: "KOPI NOT SUSU", price: "13K", best: false, desc: "Sentuhan rasa klasik yang membawa nostalgia, menggabungkan kopi hitam pekat dengan kental manis premium yang kaya rasa.", image: "../gambar/Kopi Not Susu.png" },
+    { id: 4, name: "AMERICANO", price: "10K", best: false, desc: "Ekstraksi espresso murni yang jernih menggunakan biji kopi pilihan house roast kami, disajikan untuk kesegaran rasa kopi yang jujur.", image: "../gambar/americano.png" },
+    { id: 8, name: "KOPI NOT PANCO", price: "14K", best: false, desc: "Perpaduan unik kopi dengan pandan dan kelapa yang memberikan aroma khas dan rasa yang eksotis. Sempurna untuk mencari cita rasa yang berbeda dan memorable.", image: "../gambar/Kopi Not Panco dan Pandan Coconut.jpeg" },
+    { id: 9, name: "CAPPUCCINO", price: "13K", best: false, desc: "Espresso yang dikombinasikan dengan susu steamed dan busa lembut dalam perbandingan sempurna, menghasilkan rasa yang smooth dan creamy untuk pengalaman kopi yang autentik.", image: "../gambar/Kopi Not Latte.png" },
   ],
   nonCoffee: [
-    { id: 5, name: "COKELAT", price: "13K", best: false, desc: "Cokelat hitam premium pilihan yang dipadukan dengan susu segar, memberikan sensasi rasa cokelat yang mendalam, kental, dan mewah.", image: "https://picsum.photos/seed/chocolate/500/600" },
-    { id: 6, name: "MATCHA", price: "18K", best: true, desc: "Sajian Matcha spesial kami dengan foam lembut, diolah dengan resep rahasia Not Yet Coffee untuk rasa yang tak terlupakan.", image: "https:/https://drive.google.com/file/d/1IEYtDnFfDiTzJiGmMsRG_NRgJFxgUU_h/view?usp=sharing/500/600" },
-    { id: 7, name: "RED VELVET", price: "13K", best: false, desc: "Rasa kue Red Velvet yang kaya dan manis lembut dipadukan dengan susu krimi, menghadirkan sensasi makan kue dalam setiap tegukan.", image: "https://picsum.photos/seed/red-velvet/500/600" },
-    { id: 10, name: "THAI TEA", price: "13K", best: false, desc: "Seduhan daun teh asli Thailand pilihan yang disajikan dengan kental manis dan evaporasi, menciptakan rasa teh yang unik dan menyegarkan.", image: "https://picsum.photos/seed/thai-tea/500/600" },
+    { id: 5, name: "COKELAT", price: "13K", best: false, desc: "Cokelat hitam premium pilihan yang dipadukan dengan susu segar, memberikan sensasi rasa cokelat yang mendalam, kental, dan mewah.", image: "../gambar/Cokelat.png" },
+    { id: 6, name: "MATCHA", price: "18K", best: true, desc: "Sajian Matcha spesial kami dengan foam lembut, diolah dengan resep rahasia Not Yet Coffee untuk rasa yang tak terlupakan.", image: "../gambar/Matcha Latte.png" },
+    { id: 7, name: "RED VELVET", price: "13K", best: false, desc: "Rasa kue Red Velvet yang kaya dan manis lembut dipadukan dengan susu krimi, menghadirkan sensasi makan kue dalam setiap tegukan.", image: "../gambar/Red velvet.png" },
+    { id: 10, name: "THAI TEA", price: "13K", best: false, desc: "Seduhan daun teh asli Thailand pilihan yang disajikan dengan kental manis dan evaporasi, menciptakan rasa teh yang unik dan menyegarkan.", image: "../gambar/Thai Tea.png" },
+  ],
+  liter: [
+    { id: 12, name: "SATU LITER MATCHA", price: "85K", best: false, desc: "Matcha premium dalam ukuran satu liter, menyajikan rasa teh hijau autentik yang kaya antioksidan dengan tekstur creamy yang memuaskan untuk berbagi atau dinikmati sepanjang hari.", image: "../gambar/satu liter.png" },
+    { id: 13, name: "SATU LITER KOPI NOT AREN", price: "75K", best: false, desc: "Kopi robusta pilihan dicampur dengan gula aren alami dalam ukuran satu liter, memberikan rasa manis alami dan aroma kopi yang kuat untuk pengalaman minum yang berbeda.", image: "../gambar/satu liter.png" },
+    { id: 14, name: "SATU LITER COKLAT", price: "75K", best: false, desc: "Cokelat premium dalam ukuran satu liter, dipadukan dengan susu segar untuk sensasi rasa cokelat yang intens dan creamy, sempurna untuk acara keluarga atau gathering.", image: "../gambar/satu liter.png" },
   ]
 };
 
@@ -547,7 +554,7 @@ export default function App() {
         </section>
 
         {/* Coffee Section */}
-        <section id="menu" className="mb-24 scroll-mt-24">
+        <section className="mb-24 scroll-mt-24">
           <div className="relative mb-16 text-center">
             <h2 className="font-display font-black text-6xl md:text-8xl tracking-tight text-white block">
               COFFEE SERIES
@@ -573,6 +580,22 @@ export default function App() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12">
             {MENU_DATA.nonCoffee.map((item) => (
+              <MenuItem key={item.id} item={item} onClick={() => setSelectedItem(item)} />
+            ))}
+          </div>
+        </section>
+
+        {/* Satu Liter Section */}
+        <section className="mb-32">
+          <div className="relative mb-16 text-center">
+            <h2 className="font-display font-black text-6xl md:text-8xl tracking-tight text-white block">
+              SATU LITER
+            </h2>
+            <div className="h-4 bg-white/10 w-[80%] mx-auto -mt-6 rounded-full blur-xl" />
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12">
+            {MENU_DATA.liter.map((item) => (
               <MenuItem key={item.id} item={item} onClick={() => setSelectedItem(item)} />
             ))}
           </div>
