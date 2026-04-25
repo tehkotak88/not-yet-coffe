@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background merah -->
+  <rect width="64" height="64" rx="12" fill="#B91C1C"/>
+  <!-- Teks NY putih -->
+  <text
+    x="32"
+    y="46"
+    text-anchor="middle"
+    font-family="Georgia, serif"
+    font-weight="900"
+    font-size="34"
+    fill="white"
+    letter-spacing="-2"
+  >NY</text>
+</svg>
