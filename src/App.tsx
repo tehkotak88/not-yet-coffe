@@ -235,7 +235,14 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+    
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
   }, [onClose]);
 
   // Focus modal on mount
@@ -250,85 +257,103 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-brand-red/90 backdrop-blur-xl"
+      className="fixed inset-0 z-[999] flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-lg"
       onClick={onClose}
     >
+      {/* Enhanced Close Button — Floating at the top right, always on top of everything */}
+      <motion.button 
+        initial={{ scale: 0, rotate: -90 }}
+        animate={{ scale: 1, rotate: 0 }}
+        onClick={onClose}
+        className="absolute top-6 right-6 md:top-10 md:right-10 z-[1000] bg-white text-brand-red p-4 rounded-full shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:scale-110 active:scale-95 transition-all group"
+        aria-label="Close Modal"
+      >
+        <X className="w-8 h-8 group-hover:rotate-90 transition-transform duration-300" />
+      </motion.button>
+
       <motion.div 
         ref={modalRef}
         tabIndex={-1}
-        initial={{ scale: 0.9, y: 20 }}
-        animate={{ scale: 1, y: 0 }}
-        exit={{ scale: 0.9, y: 20 }}
-        className="bg-white rounded-[40px] w-full max-w-2xl overflow-hidden shadow-[0px_40px_100px_rgba(0,0,0,0.5)] border-8 border-white relative focus:outline-none"
+        initial={{ scale: 0.9, y: 50, opacity: 0 }}
+        animate={{ scale: 1, y: 0, opacity: 1 }}
+        exit={{ scale: 0.9, y: 50, opacity: 0 }}
+        className="bg-white rounded-[40px] w-full max-w-4xl overflow-hidden shadow-[0px_50px_100px_rgba(0,0,0,0.6)] relative focus:outline-none"
         onClick={e => e.stopPropagation()}
       >
-        <button 
-          onClick={onClose}
-          className="absolute top-6 right-6 z-[110] bg-brand-red text-white p-3 rounded-full shadow-xl hover:scale-110 active:scale-95 transition-transform"
-          aria-label="Close Modal"
-        >
-          <X className="w-6 h-6" />
-        </button>
-
-        <div className="flex flex-col md:flex-row h-full">
-          <div className="md:w-1/2 aspect-square md:aspect-auto">
+        <div className="flex flex-col md:flex-row h-full max-h-[90vh] md:max-h-[85vh] overflow-y-auto">
+          {/* Product Image Section */}
+          <div className="md:w-1/2 relative bg-gray-50">
             <img 
               src={item.image} 
               alt={item.name} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover min-h-[300px] md:min-h-[500px]"
               referrerPolicy="no-referrer"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
-          <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-            <div className="mb-6">
-              <span className="bg-brand-red/10 text-brand-red px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-3 inline-block">
-                Premium Menu
-              </span>
-              <h2 className="font-display font-black text-4xl text-brand-red leading-none mb-2 uppercase">
+
+          {/* Product Details Section */}
+          <div className="md:w-1/2 p-10 md:p-14 flex flex-col justify-center bg-white">
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="bg-brand-red text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-red/20">
+                  Premium Selection
+                </span>
+                {item.best && (
+                  <span className="bg-amber-400 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-amber-400/20">
+                    Best Seller
+                  </span>
+                )}
+              </div>
+              
+              <h2 className="font-display font-black text-4xl md:text-5xl text-brand-red leading-[0.9] mb-4 uppercase tracking-tighter">
                 {item.name}
               </h2>
-              <div className="flex items-center gap-2 mb-4">
-                 <div className="h-1 w-12 bg-brand-red rounded-full" />
-                 <span className="font-display font-black text-brand-red text-2xl">{item.price}</span>
+              
+              <div className="flex items-center gap-4 mb-2">
+                 <div className="h-[2px] w-16 bg-brand-red/20" />
+                 <span className="font-display font-black text-brand-red text-3xl tracking-tight">{item.price}</span>
               </div>
             </div>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div>
-                <h4 className="text-[10px] font-black uppercase tracking-widest text-black/30 mb-2">Description</h4>
-                <p className="font-sans text-brand-red/70 text-sm leading-relaxed italic">
-                  {item.desc}
+                <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-3">Product Description</h4>
+                <p className="font-sans text-brand-red/80 text-base leading-relaxed italic font-medium">
+                  "{item.desc}"
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-brand-red/10">
+              <div className="grid grid-cols-2 gap-8 py-8 border-y border-brand-red/10">
                  <div>
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-black/30 mb-1">Variant</h4>
-                    <p className="font-bold text-xs text-brand-red">Hot / Ice</p>
+                    <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">Service Style</h4>
+                    <p className="font-black text-sm text-brand-red uppercase tracking-widest">Ice / Hot Available</p>
                  </div>
                  <div>
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-black/30 mb-1">Availabilty</h4>
-                    <p className="font-bold text-xs text-brand-red">In Store</p>
+                    <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">Availability</h4>
+                    <p className="font-black text-sm text-brand-red uppercase tracking-widest">In Stock</p>
                  </div>
               </div>
 
-              <div className="pt-6 border-t border-brand-red/10">
-                 <h4 className="text-[10px] font-black uppercase tracking-widest text-black/30 mb-3 flex items-center gap-2">
-                   <Zap className="w-3 h-3 text-brand-red" />
-                   Recommended Pairing
+              <div>
+                 <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-4 flex items-center gap-2">
+                   <Zap className="w-4 h-4 text-brand-red" />
+                   Perfect Pairing
                  </h4>
-                 <div className="flex items-center gap-4 bg-brand-red/5 p-4 rounded-2xl border border-brand-red/10 group/pair cursor-default">
-                    <div className="w-12 h-12 rounded-xl overflow-hidden shadow-md shrink-0">
+                 <div className="flex items-center gap-5 bg-brand-red/[0.03] p-5 rounded-[24px] border border-brand-red/5 hover:bg-brand-red/[0.06] transition-colors cursor-default group/pair">
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-xl shrink-0">
                        <img 
-                          src="https://picsum.photos/seed/pastry/200/200" 
+                          src="https://picsum.photos/seed/pastry/400/400" 
                           alt="Pairing" 
-                          className="w-full h-full object-cover group-hover/pair:scale-110 transition-transform" 
+                          className="w-full h-full object-cover group-hover/pair:scale-110 transition-transform duration-500" 
                           referrerPolicy="no-referrer"
                        />
                     </div>
                     <div>
-                       <p className="font-display font-black text-brand-red text-xs uppercase leading-tight">BUTTER CROISSANT</p>
-                       <p className="font-sans text-[10px] text-brand-red/60 uppercase font-black italic mt-1">+ Rp 15.000</p>
+                       <p className="font-display font-black text-brand-red text-sm uppercase tracking-wider mb-1">Butter Croissant</p>
+                       <div className="flex items-center gap-2">
+                         <span className="text-[10px] bg-brand-red/10 text-brand-red px-2 py-0.5 rounded font-black">+ RP 15.000</span>
+                       </div>
                     </div>
                  </div>
               </div>
