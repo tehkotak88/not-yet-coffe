@@ -257,7 +257,7 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[999] flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-lg"
+      className="fixed inset-0 z-[999] flex items-start md:items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-lg overflow-y-auto overscroll-none"
       onClick={onClose}
     >
       {/* Enhanced Close Button — Floating at the top right, always on top of everything */}
@@ -265,10 +265,10 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
         initial={{ scale: 0, rotate: -90 }}
         animate={{ scale: 1, rotate: 0 }}
         onClick={onClose}
-        className="absolute top-6 right-6 md:top-10 md:right-10 z-[1000] bg-white text-brand-red p-4 rounded-full shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:scale-110 active:scale-95 transition-all group"
+        className="fixed top-4 right-4 md:top-10 md:right-10 z-[1001] bg-white text-brand-red p-3 md:p-4 rounded-full shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:scale-110 active:scale-95 transition-all group"
         aria-label="Close Modal"
       >
-        <X className="w-8 h-8 group-hover:rotate-90 transition-transform duration-300" />
+        <X className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-90 transition-transform duration-300" />
       </motion.button>
 
       <motion.div 
@@ -277,10 +277,10 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
         initial={{ scale: 0.9, y: 50, opacity: 0 }}
         animate={{ scale: 1, y: 0, opacity: 1 }}
         exit={{ scale: 0.9, y: 50, opacity: 0 }}
-        className="bg-white rounded-[40px] w-full max-w-4xl overflow-hidden shadow-[0px_50px_100px_rgba(0,0,0,0.6)] relative focus:outline-none"
+        className="bg-white rounded-[32px] md:rounded-[40px] w-full max-w-4xl overflow-hidden shadow-[0px_50px_100px_rgba(0,0,0,0.6)] relative focus:outline-none my-auto"
         onClick={e => e.stopPropagation()}
       >
-        <div className="flex flex-col md:flex-row h-full max-h-[90vh] md:max-h-[85vh] overflow-y-auto">
+        <div className="flex flex-col md:flex-row h-full max-h-none">
           {/* Product Image Section */}
           <div className="md:w-1/2 relative bg-gray-50">
             <img 
@@ -293,8 +293,8 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
           </div>
 
           {/* Product Details Section */}
-          <div className="md:w-1/2 p-10 md:p-14 flex flex-col justify-center bg-white">
-            <div className="mb-8">
+          <div className="md:w-1/2 p-8 md:p-14 flex flex-col justify-center bg-white relative">
+            <div className="mb-8 pt-2 md:pt-0">
               <div className="flex items-center gap-3 mb-4">
                 <span className="bg-brand-red text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-red/20">
                   Premium Selection
