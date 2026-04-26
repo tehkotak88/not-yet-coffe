@@ -49,11 +49,12 @@ const CatalogHeader = () => (
           className="text-center md:text-right relative"
         >
           <div className="relative z-10 space-y-4">
-            <div className="flex flex-col items-center md:items-end gap-2">
+            <div className="flex flex-col items-center md:items-end gap-1">
               <div className="bg-white text-brand-red px-4 py-1 rounded-md font-black text-[10px] uppercase tracking-widest shadow-lg">
                 Operational Hours
               </div>
-              <span className="font-display font-black text-4xl text-white tracking-widest drop-shadow-md">08:00 - 23:00</span>
+              <span className="font-display font-black text-3xl text-white tracking-widest drop-shadow-md">OPEN EVERYDAY</span>
+              <span className="font-display font-bold text-sm text-white/90 tracking-widest uppercase">MON-FRI: 08-23 | SAT-SUN: 08-00</span>
             </div>
             <div className="flex items-center justify-center md:justify-end gap-6 text-[10px] font-bold uppercase tracking-widest text-white/80">
               <div className="flex items-center gap-2">
@@ -191,7 +192,7 @@ const INFO_DATA = [
   {
     id: 3,
     name: "OPERATIONAL HOURS",
-    value: "Kami melayani setiap Selasa hingga Minggu mulai pukul 08:00 pagi hingga 23:00 malam. Kami tutup pada hari Senin untuk perawatan berkala guna memastikan kualitas layanan tetap prima.",
+    value: "Kami melayani setiap hari mulai pukul 08:00 pagi. Untuk hari kerja kami buka hingga 23:00, sementara pada akhir pekan (Sabtu & Minggu) kami melayani lebih lama hingga pukul 00:00 malam.",
     icon: Clock
   },
   {
@@ -382,7 +383,7 @@ const InfoParagraph = () => (
           Berlokasi di ketenangan <strong>BTN Minasa Upa</strong>, kedai kami dirancang sebagai pelarian sejenak dari hiruk-pikuk rutinitas. Kami menyediakan ruang yang bukan hanya sekadar tempat duduk, tapi sebuah ekosistem kreatif di mana Anda bisa bekerja dengan fokus atau berbagi tawa bersama komunitas pecinta kopi Makassar lainnya.
         </p>
         <p>
-          Kami mengundang Anda untuk berkunjung setiap <strong>Selasa hingga Minggu</strong>, mulai pukul 08:00 hingga 23:00. Jangan lupa untuk mengikuti linimasa kami di Instagram guna mendapatkan info promo eksklusif dan menjadi bagian dari semangat komunitas kami yang terus tumbuh. Selamat menikmati waktu tunggu Anda bersama kami.
+          Kami mengundang Anda untuk berkunjung setiap <strong>hari</strong>, mulai pukul 08:00 pagi. Khusus pada <strong>akhir pekan</strong>, kami buka hingga pukul 00:00 malam untuk menemani waktu santai Anda lebih lama. Jangan lupa untuk mengikuti linimasa kami di Instagram guna mendapatkan info promo eksklusif dan menjadi bagian dari semangat komunitas kami yang terus tumbuh. Selamat menikmati waktu tunggu Anda bersama kami.
         </p>
       </div>
     </div>
