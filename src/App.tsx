@@ -11,7 +11,6 @@ const MENU_DATA = {
     { id: 3, name: "KOPI NOT SUSU", price: "13K", best: false, desc: "Sentuhan rasa klasik yang membawa nostalgia, menggabungkan kopi hitam pekat dengan kental manis premium yang kaya rasa. Menggunakan racikan biji kopi House Blend spesial kami.", image: "/gambar/Kopi Not Susu.png" },
     { id: 4, name: "AMERICANO", price: "10K", best: false, desc: "Ekstraksi espresso murni yang jernih menggunakan biji kopi 100% Arabica house roast kami, disajikan untuk kesegaran rasa kopi yang jujur dengan notes rasa yang khas.", image: "/gambar/americano.png" },
     { id: 8, name: "KOPI NOT PANCO", price: "14K", best: false, desc: "Perpaduan unik espresso (dari biji kopi House Blend premium) dengan pandan dan kelapa yang memberikan aroma khas dan rasa eksotis. Sempurna untuk mencari cita rasa yang berbeda dan memorable.", image: "/gambar/Kopi Not Panco dan Pandan Coconut.jpeg" },
-    { id: 9, name: "CAPPUCCINO", price: "13K", best: false, desc: "Espresso (diekstrak dari biji Arabica pilihan) yang dikombinasikan dengan susu steamed dan busa tebal lembut dalam perbandingan sempurna, menghasilkan rasa smooth dan creamy untuk pengalaman kopi autentik.", image: "/gambar/Kopi Not Latte.png" },
   ],
   nonCoffee: [
     { id: 5, name: "COKELAT", price: "13K", best: false, desc: "Minuman cokelat hitam premium pilihan yang dipadukan dengan susu segar full cream, memberikan sensasi rasa cokelat asli yang mendalam, kental, dan mewah tanpa perasa buatan.", image: "/gambar/Cokelat.png" },
