@@ -23,9 +23,9 @@ const MENU_DATA = {
     { id: 17, name: "MATCHA STROBERI", price: "20K", best: true, desc: "Perpaduan unik antara bubuk matcha premium Jepang dan selai stroberi segar buatan sendiri (homemade) yang memberikan rasa manis dan asam yang sangat seimbang.", image: "/gambar/Matcha Stroberi.png" }
   ],
   liter: [
-    { id: 12, name: "SATU LITER MATCHA", price: "85K", best: false, desc: "Minuman satu liter dari bubuk Matcha premium asli Jepang. Menyajikan rasa teh hijau autentik yang kaya antioksidan dengan tekstur creamy yang memuaskan, sangat cocok untuk berbagi.", image: "/gambar/satu liter.png" },
-    { id: 13, name: "SATU LITER KOPI NOT AREN", price: "75K", best: false, desc: "Kopi satu liter yang diekstrak dari biji kopi Robusta kualitas terbaik, dicampur dengan gula aren murni alami. Memberikan rasa manis legit dan aroma kopi yang kuat.", image: "/gambar/satu liter.png" },
-    { id: 14, name: "SATU LITER COKLAT", price: "75K", best: false, desc: "Cokelat hitam premium asli dalam kemasan satu liter, dipadukan dengan susu segar full cream untuk sensasi rasa cokelat yang intens dan creamy. Sangat sempurna untuk acara keluarga.", image: "/gambar/satu liter.png" },
+    { id: 12, name: "SATU LITER MATCHA", price: "85K", best: false, desc: "Minuman satu liter dari bubuk Matcha premium asli Jepang. Menyajikan rasa teh hijau autentik yang kaya antioksidan dengan tekstur creamy yang memuaskan, sangat cocok untuk berbagi.", image: "/gambar/Matcha Latteee.png" },
+    { id: 13, name: "SATU LITER KOPI NOT AREN", price: "75K", best: false, desc: "Kopi satu liter yang diekstrak dari biji kopi Robusta kualitas terbaik, dicampur dengan gula aren murni alami. Memberikan rasa manis legit dan aroma kopi yang kuat.", image: "/gambar/Kopi Not Arennn.jpeg" },
+    { id: 14, name: "SATU LITER COKLAT", price: "75K", best: false, desc: "Cokelat hitam premium asli dalam kemasan satu liter, dipadukan dengan susu segar full cream untuk sensasi rasa cokelat yang intens dan creamy. Sangat sempurna untuk acara keluarga.", image: "/gambar/Coklattt.png" },
   ]
 };
 
@@ -33,48 +33,44 @@ const CatalogHeader = () => (
   <header className="relative pt-12 pb-8 px-6 overflow-hidden">
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-        <motion.div 
+        <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className="flex flex-col"
         >
           <div className="bg-white p-5 rounded-xl shadow-[12px_12px_0px_0px_rgba(0,0,0,0.15)] -rotate-3 border-2 border-white mb-4">
-            <div className="flex flex-col items-center">
-              <span className="font-display font-black text-brand-red text-6xl leading-[0.8]">NOT</span>
-              <span className="font-display font-black text-brand-red text-6xl leading-[0.5] mt-1">YET</span>
-              <span className="font-display font-bold text-brand-red text-sm mt-4 tracking-[0.3em]">COFFEE</span>
-            </div>
+            <img src="/gambar/logo.jpeg" alt="Not Yet Coffee Logo" className="w-32 h-32 object-contain" />
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           className="text-center md:text-right relative"
         >
           <div className="relative z-10 space-y-4">
             <div className="flex flex-col items-center md:items-end gap-2">
-               <div className="bg-white text-brand-red px-4 py-1 rounded-md font-black text-[10px] uppercase tracking-widest shadow-lg">
-                  Operational Hours
-               </div>
-               <span className="font-display font-black text-4xl text-white tracking-widest drop-shadow-md">08:00 - 23:00</span>
+              <div className="bg-white text-brand-red px-4 py-1 rounded-md font-black text-[10px] uppercase tracking-widest shadow-lg">
+                Operational Hours
+              </div>
+              <span className="font-display font-black text-4xl text-white tracking-widest drop-shadow-md">08:00 - 23:00</span>
             </div>
             <div className="flex items-center justify-center md:justify-end gap-6 text-[10px] font-bold uppercase tracking-widest text-white/80">
-               <div className="flex items-center gap-2">
-                  <Instagram className="w-3 h-3" />
-                  <span>@notyetcoffee</span>
-               </div>
-               <div className="flex items-center gap-2">
-                  <MapPin className="w-3 h-3" />
-                  <span>Minasa Upa Blok F</span>
-               </div>
+              <div className="flex items-center gap-2">
+                <Instagram className="w-3 h-3" />
+                <span>@notyetcoffee</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-3 h-3" />
+                <span>Minasa Upa Blok F</span>
+              </div>
             </div>
           </div>
         </motion.div>
       </div>
 
       {/* Integrated Promo Banner */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="bg-white/10 backdrop-blur-md border-y border-white/20 py-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12"
@@ -96,7 +92,7 @@ const CatalogHeader = () => (
 );
 
 const PriceTag = ({ price }: { price: string }) => (
-  <motion.div 
+  <motion.div
     initial={{ scale: 0 }}
     whileInView={{ scale: 1 }}
     className="absolute -top-6 -left-2 z-20"
@@ -111,7 +107,7 @@ const PriceTag = ({ price }: { price: string }) => (
 );
 
 const BestSellerSign = () => (
-  <motion.div 
+  <motion.div
     initial={{ x: 20, opacity: 0 }}
     whileInView={{ x: 0, opacity: 1 }}
     className="absolute -bottom-6 -right-2 z-20"
@@ -135,7 +131,7 @@ const MenuItem = ({ item, onClick }: { item: any, onClick: () => void, key?: str
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       whileHover={{ y: -8 }}
@@ -149,19 +145,19 @@ const MenuItem = ({ item, onClick }: { item: any, onClick: () => void, key?: str
       <div className="relative w-full max-w-[280px] aspect-[4/5] mb-6">
         <PriceTag price={item.price} />
         {item.best && <BestSellerSign />}
-        
+
         <div className="w-full h-full rounded-[40px] overflow-hidden bg-white shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-focus:scale-105 group-hover:shadow-[0_20px_60px_rgba(255,255,255,0.15)]">
           <div className="absolute inset-0 gloss-effect z-10 pointer-events-none opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500" />
-          <img 
-            src={item.image} 
-            alt={item.name} 
+          <img
+            src={item.image}
+            alt={item.name}
             className="w-full h-full object-cover transition-all duration-700"
             referrerPolicy="no-referrer"
           />
         </div>
       </div>
 
-      <motion.div 
+      <motion.div
         className="text-center w-full"
         transition={{ delay: 0.1 }}
       >
@@ -180,34 +176,34 @@ const MenuItem = ({ item, onClick }: { item: any, onClick: () => void, key?: str
 };
 
 const INFO_DATA = [
-  { 
-    id: 1, 
-    title: "FRESHLY BREWED", 
-    value: "Setiap cangkir kopi kami diseduh dengan metode presisi segera setelah Anda memesan. Ini menjamin aroma yang kuat dan profil rasa biji kopi pilihan tetap terjaga hingga ke tangan Anda.", 
-    icon: Coffee 
+  {
+    id: 1,
+    title: "FRESHLY BREWED",
+    value: "Setiap cangkir kopi kami diseduh dengan metode presisi segera setelah Anda memesan. Ini menjamin aroma yang kuat dan profil rasa biji kopi pilihan tetap terjaga hingga ke tangan Anda.",
+    icon: Coffee
   },
-  { 
-    id: 2, 
-    name: "STRATEGIC LOCATION", 
-    value: "Terletak di BTN Minasa Upa Blok F 15 / 14, kedai kami menawarkan suasana yang tenang dan nyaman, jauh dari hiruk-pikuk kota, menjadikannya tempat ideal untuk bekerja maupun bersantai.", 
-    icon: MapPin 
+  {
+    id: 2,
+    name: "STRATEGIC LOCATION",
+    value: "Terletak di BTN Minasa Upa Blok F 15 / 14, kedai kami menawarkan suasana yang tenang dan nyaman, jauh dari hiruk-pikuk kota, menjadikannya tempat ideal untuk bekerja maupun bersantai.",
+    icon: MapPin
   },
-  { 
-    id: 3, 
-    name: "OPERATIONAL HOURS", 
-    value: "Kami melayani setiap Selasa hingga Minggu mulai pukul 08:00 pagi hingga 23:00 malam. Kami tutup pada hari Senin untuk perawatan berkala guna memastikan kualitas layanan tetap prima.", 
-    icon: Clock 
+  {
+    id: 3,
+    name: "OPERATIONAL HOURS",
+    value: "Kami melayani setiap Selasa hingga Minggu mulai pukul 08:00 pagi hingga 23:00 malam. Kami tutup pada hari Senin untuk perawatan berkala guna memastikan kualitas layanan tetap prima.",
+    icon: Clock
   },
-  { 
-    id: 4, 
-    name: "VIBRANT COMMUNITY", 
-    value: "Bergabunglah dengan komunitas pecinta kopi kami di Instagram @notyetcoffee. Dapatkan informasi terkini mengenai promo harian, event musik, hingga edukasi seputar proses pengolahan kopi.", 
-    icon: Instagram 
+  {
+    id: 4,
+    name: "VIBRANT COMMUNITY",
+    value: "Bergabunglah dengan komunitas pecinta kopi kami di Instagram @notyetcoffee. Dapatkan informasi terkini mengenai promo harian, event musik, hingga edukasi seputar proses pengolahan kopi.",
+    icon: Instagram
   },
 ];
 
 const InfoCard = ({ item }: { item: any, key?: string | number }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
     whileInView={{ opacity: 1, scale: 1 }}
     className="bg-white p-10 rounded-[40px] border-4 border-white/20 shadow-2xl flex flex-col items-center text-center group h-full"
@@ -230,15 +226,15 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      
+
       // Basic focus trap or arrow nav inside modal could go here
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    
+
     // Prevent body scroll when modal is open
     document.body.style.overflow = 'hidden';
-    
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = 'unset';
@@ -253,7 +249,7 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
   }, []);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -261,7 +257,7 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
       onClick={onClose}
     >
       {/* Enhanced Close Button — Floating at the top right, always on top of everything */}
-      <motion.button 
+      <motion.button
         initial={{ scale: 0, rotate: -90 }}
         animate={{ scale: 1, rotate: 0 }}
         onClick={onClose}
@@ -271,7 +267,7 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
         <X className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-90 transition-transform duration-300" />
       </motion.button>
 
-      <motion.div 
+      <motion.div
         ref={modalRef}
         tabIndex={-1}
         initial={{ scale: 0.9, y: 50, opacity: 0 }}
@@ -283,9 +279,9 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
         <div className="flex flex-col md:flex-row h-full max-h-none">
           {/* Product Image Section */}
           <div className="md:w-1/2 relative bg-gray-50">
-            <img 
-              src={item.image} 
-              alt={item.name} 
+            <img
+              src={item.image}
+              alt={item.name}
               className="w-full h-full object-cover min-h-[300px] md:min-h-[500px]"
               referrerPolicy="no-referrer"
             />
@@ -305,17 +301,17 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
                   </span>
                 )}
               </div>
-              
+
               <h2 className="font-display font-black text-4xl md:text-5xl text-brand-red leading-[0.9] mb-4 uppercase tracking-tighter">
                 {item.name}
               </h2>
-              
+
               <div className="flex items-center gap-4 mb-2">
-                 <div className="h-[2px] w-16 bg-brand-red/20" />
-                 <span className="font-display font-black text-brand-red text-3xl tracking-tight">{item.price}</span>
+                <div className="h-[2px] w-16 bg-brand-red/20" />
+                <span className="font-display font-black text-brand-red text-3xl tracking-tight">{item.price}</span>
               </div>
             </div>
-            
+
             <div className="space-y-8">
               <div>
                 <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-3">Product Description</h4>
@@ -325,37 +321,37 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
               </div>
 
               <div className="grid grid-cols-2 gap-8 py-8 border-y border-brand-red/10">
-                 <div>
-                    <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">Service Style</h4>
-                    <p className="font-black text-sm text-brand-red uppercase tracking-widest">Ice / Hot Available</p>
-                 </div>
-                 <div>
-                    <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">Availability</h4>
-                    <p className="font-black text-sm text-brand-red uppercase tracking-widest">In Stock</p>
-                 </div>
+                <div>
+                  <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">Service Style</h4>
+                  <p className="font-black text-sm text-brand-red uppercase tracking-widest">Ice / Hot Available</p>
+                </div>
+                <div>
+                  <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">Availability</h4>
+                  <p className="font-black text-sm text-brand-red uppercase tracking-widest">In Stock</p>
+                </div>
               </div>
 
               <div>
-                 <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-4 flex items-center gap-2">
-                   <Zap className="w-4 h-4 text-brand-red" />
-                   Perfect Pairing
-                 </h4>
-                 <div className="flex items-center gap-5 bg-brand-red/[0.03] p-5 rounded-[24px] border border-brand-red/5 hover:bg-brand-red/[0.06] transition-colors cursor-default group/pair">
-                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-xl shrink-0">
-                       <img 
-                          src="https://picsum.photos/seed/pastry/400/400" 
-                          alt="Pairing" 
-                          className="w-full h-full object-cover group-hover/pair:scale-110 transition-transform duration-500" 
-                          referrerPolicy="no-referrer"
-                       />
+                <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-4 flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand-red" />
+                  Perfect Pairing
+                </h4>
+                <div className="flex items-center gap-5 bg-brand-red/[0.03] p-5 rounded-[24px] border border-brand-red/5 hover:bg-brand-red/[0.06] transition-colors cursor-default group/pair">
+                  <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-xl shrink-0">
+                    <img
+                      src="https://picsum.photos/seed/pastry/400/400"
+                      alt="Pairing"
+                      className="w-full h-full object-cover group-hover/pair:scale-110 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-display font-black text-brand-red text-sm uppercase tracking-wider mb-1">Butter Croissant</p>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] bg-brand-red/10 text-brand-red px-2 py-0.5 rounded font-black">+ RP 15.000</span>
                     </div>
-                    <div>
-                       <p className="font-display font-black text-brand-red text-sm uppercase tracking-wider mb-1">Butter Croissant</p>
-                       <div className="flex items-center gap-2">
-                         <span className="text-[10px] bg-brand-red/10 text-brand-red px-2 py-0.5 rounded font-black">+ RP 15.000</span>
-                       </div>
-                    </div>
-                 </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -366,18 +362,18 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
 };
 
 const InfoParagraph = () => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     className="max-w-4xl mx-auto bg-white/5 backdrop-blur-sm p-10 md:p-16 rounded-[48px] border border-white/10 text-center md:text-left relative overflow-hidden group"
   >
     <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-white/10 transition-colors" />
-    
+
     <div className="relative z-10">
       <h3 className="font-display font-black text-white text-3xl md:text-4xl mb-8 leading-tight uppercase tracking-tight">
         Filosofi di Balik Setiap <span className="text-white/40">Seduhan Kami</span>
       </h3>
-      
+
       <div className="space-y-6 font-sans text-white/80 text-sm md:text-base leading-relaxed italic">
         <p>
           Di <strong>Not Yet Coffee</strong>, kami percaya bahwa kopi bukan sekadar minuman, melainkan sebuah perjalanan rasa yang patut dinikmati tanpa terburu-buru. Itulah mengapa setiap cangkir yang kami sajikan adalah hasil dari dedikasi tinggi, mulai dari pemilihan biji kopi terbaik hingga metode penyeduhan yang presisi untuk mengeluarkan profil rasa yang paling autentik.
@@ -414,13 +410,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-[120] transition-all duration-500 ${
-          isScrolled ? "py-4 bg-brand-red/80 backdrop-blur-xl border-b border-white/10 shadow-2xl" : "py-8 bg-transparent"
-        }`}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-[120] transition-all duration-500 ${isScrolled ? "py-4 bg-brand-red/80 backdrop-blur-xl border-b border-white/10 shadow-2xl" : "py-8 bg-transparent"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-2 group cursor-pointer"
@@ -429,8 +424,8 @@ const Navbar = () => {
               setIsMobileMenuOpen(false);
             }}
           >
-            <div className="bg-white p-2 rounded-lg rotate-[-5deg] group-hover:rotate-0 transition-transform">
-               <span className="font-display font-black text-brand-red text-xl leading-none">NY</span>
+            <div className="bg-white p-1 rounded-lg rotate-[-5deg] group-hover:rotate-0 transition-transform overflow-hidden">
+              <img src="/gambar/logo.jpeg" alt="NY Logo" className="w-10 h-10 object-cover" />
             </div>
             <span className="font-display font-black text-white text-lg tracking-tighter">NOTYET COFFEE</span>
           </motion.div>
@@ -457,7 +452,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <button 
+          <button
             type="button"
             className="md:hidden relative z-[200] text-white p-4 -mr-4 flex items-center justify-center cursor-pointer pointer-events-auto select-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -470,7 +465,7 @@ const Navbar = () => {
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
@@ -520,7 +515,7 @@ const GoogleMap = () => (
       </h2>
     </div>
 
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       className="w-full h-[450px] rounded-[48px] overflow-hidden border-8 border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)] bg-white/5 relative group"
@@ -535,16 +530,16 @@ const GoogleMap = () => (
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
-      
+
       {/* Interactive Overlay Info */}
       <div className="absolute bottom-10 left-10 z-10 hidden md:block">
-         <div className="bg-white p-6 rounded-3xl shadow-2xl border-4 border-brand-red/10 max-w-xs transform -rotate-2">
-            <h4 className="font-display font-black text-brand-red text-xl uppercase mb-2">Not Yet Coffee</h4>
-            <p className="text-brand-red/70 text-xs font-bold uppercase leading-relaxed italic">
-                BTN MINASA UPA BLOK F 15 / 14,<br />
-                Gedung Merah - Lantai 1
-            </p>
-         </div>
+        <div className="bg-white p-6 rounded-3xl shadow-2xl border-4 border-brand-red/10 max-w-xs transform -rotate-2">
+          <h4 className="font-display font-black text-brand-red text-xl uppercase mb-2">Not Yet Coffee</h4>
+          <p className="text-brand-red/70 text-xs font-bold uppercase leading-relaxed italic">
+            BTN MINASA UPA BLOK F 15 / 14,<br />
+            Gedung Merah - Lantai 1
+          </p>
+        </div>
       </div>
     </motion.div>
   </section>
@@ -564,7 +559,7 @@ const FloatingSocialButtons = () => (
       aria-label="Follow on TikTok"
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity">
-        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.36-1.37 1.15-3.1 1.83-4.91 2.01-1.64.16-3.33-.08-4.81-.88-2.61-1.4-4.22-4.14-4.27-7.14-.04-2.52 1.05-5.01 2.97-6.72 1.58-1.4 3.66-2.18 5.76-2.29v4.06c-1.44.02-2.88.54-3.95 1.51-.95.86-1.48 2.15-1.48 3.46.03 1.48.65 2.91 1.73 3.91 1.03.96 2.47 1.45 3.89 1.34 1.48-.12 2.87-.84 3.79-2 1.01-1.28 1.44-2.91 1.41-4.52V0h4.15z"/>
+        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.36-1.37 1.15-3.1 1.83-4.91 2.01-1.64.16-3.33-.08-4.81-.88-2.61-1.4-4.22-4.14-4.27-7.14-.04-2.52 1.05-5.01 2.97-6.72 1.58-1.4 3.66-2.18 5.76-2.29v4.06c-1.44.02-2.88.54-3.95 1.51-.95.86-1.48 2.15-1.48 3.46.03 1.48.65 2.91 1.73 3.91 1.03.96 2.47 1.45 3.89 1.34 1.48-.12 2.87-.84 3.79-2 1.01-1.28 1.44-2.91 1.41-4.52V0h4.15z" />
       </svg>
       <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 font-display font-black text-xs uppercase tracking-widest whitespace-nowrap">
         Follow Us
@@ -631,28 +626,28 @@ export default function App() {
       <CatalogHeader />
 
       <main className="max-w-7xl mx-auto px-6 text-center lg:text-left">
-        
+
         {/* Information Catalog Section - NOW AT TOP */}
         <section id="about" className="mb-32 mt-32 md:mt-12">
-           <div className="relative mb-16 text-center">
-              <span className="bg-white text-brand-red px-6 py-2 rounded-full font-black text-xs uppercase tracking-[0.4em] mb-4 inline-block shadow-xl">
-                 Official Guide
-              </span>
-              <h2 className="font-display font-black text-6xl md:text-[80px] leading-tight text-white block">
-                 INFORMASI
-              </h2>
-           </div>
+          <div className="relative mb-16 text-center">
+            <span className="bg-white text-brand-red px-6 py-2 rounded-full font-black text-xs uppercase tracking-[0.4em] mb-4 inline-block shadow-xl">
+              Official Guide
+            </span>
+            <h2 className="font-display font-black text-6xl md:text-[80px] leading-tight text-white block">
+              INFORMASI
+            </h2>
+          </div>
 
-           {/* Paragraph Version of Info Catalog - NOW AT TOP OF SECTION */}
-           <div className="mb-20">
-             <InfoParagraph />
-           </div>
+          {/* Paragraph Version of Info Catalog - NOW AT TOP OF SECTION */}
+          <div className="mb-20">
+            <InfoParagraph />
+          </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {INFO_DATA.map((info) => (
-                <InfoCard key={info.id} item={info} />
-              ))}
-           </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {INFO_DATA.map((info) => (
+              <InfoCard key={info.id} item={info} />
+            ))}
+          </div>
         </section>
 
         {/* Coffee Section */}
@@ -663,7 +658,7 @@ export default function App() {
             </h2>
             <div className="h-4 bg-white/10 w-[80%] mx-auto -mt-6 rounded-full blur-xl" />
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12">
             {MENU_DATA.coffee.map((item) => (
               <MenuItem key={item.id} item={item} onClick={() => setSelectedItem(item)} />
@@ -679,7 +674,7 @@ export default function App() {
             </h2>
             <div className="h-4 bg-white/10 w-[80%] mx-auto -mt-6 rounded-full blur-xl" />
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12">
             {MENU_DATA.matcha.map((item) => (
               <MenuItem key={item.id} item={item} onClick={() => setSelectedItem(item)} />
@@ -695,7 +690,7 @@ export default function App() {
             </h2>
             <div className="h-4 bg-white/10 w-[80%] mx-auto -mt-6 rounded-full blur-xl" />
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12">
             {MENU_DATA.nonCoffee.map((item) => (
               <MenuItem key={item.id} item={item} onClick={() => setSelectedItem(item)} />
@@ -711,7 +706,7 @@ export default function App() {
             </h2>
             <div className="h-4 bg-white/10 w-[80%] mx-auto -mt-6 rounded-full blur-xl" />
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12">
             {MENU_DATA.liter.map((item) => (
               <MenuItem key={item.id} item={item} onClick={() => setSelectedItem(item)} />
@@ -726,9 +721,9 @@ export default function App() {
         <footer className="mt-40 pt-16 border-t border-white/20">
           <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left">
             <div className="flex flex-col gap-4">
-              <a 
-                href="https://wa.me/628818161616" 
-                target="_blank" 
+              <a
+                href="https://wa.me/628818161616"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center md:justify-start gap-4 group"
               >
@@ -740,9 +735,9 @@ export default function App() {
                   <p className="text-xs text-white/50 font-bold uppercase group-hover:text-white transition-colors">WhatsApp Order</p>
                 </div>
               </a>
-              <a 
-                href="https://instagram.com/notyetcoffee" 
-                target="_blank" 
+              <a
+                href="https://instagram.com/notyetcoffee"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center md:justify-start gap-4 group"
               >
@@ -754,15 +749,15 @@ export default function App() {
                   <p className="text-xs text-white/50 font-bold uppercase group-hover:text-white transition-colors">Follow us for updates</p>
                 </div>
               </a>
-              <a 
-                href="https://www.tiktok.com/@not.yet.coffee?_r=1&_t=ZS-95lPGMnqpT6" 
-                target="_blank" 
+              <a
+                href="https://www.tiktok.com/@not.yet.coffee?_r=1&_t=ZS-95lPGMnqpT6"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center md:justify-start gap-4 group"
               >
                 <div className="bg-white/10 p-2 rounded-lg group-hover:bg-gradient-to-br group-hover:from-[#00f2fe] group-hover:via-[#111111] group-hover:to-[#fe0979] transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-white">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.36-1.37 1.15-3.1 1.83-4.91 2.01-1.64.16-3.33-.08-4.81-.88-2.61-1.4-4.22-4.14-4.27-7.14-.04-2.52 1.05-5.01 2.97-6.72 1.58-1.4 3.66-2.18 5.76-2.29v4.06c-1.44.02-2.88.54-3.95 1.51-.95.86-1.48 2.15-1.48 3.46.03 1.48.65 2.91 1.73 3.91 1.03.96 2.47 1.45 3.89 1.34 1.48-.12 2.87-.84 3.79-2 1.01-1.28 1.44-2.91 1.41-4.52V0h4.15z"/>
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.78-1.15 5.54-3.33 7.36-1.37 1.15-3.1 1.83-4.91 2.01-1.64.16-3.33-.08-4.81-.88-2.61-1.4-4.22-4.14-4.27-7.14-.04-2.52 1.05-5.01 2.97-6.72 1.58-1.4 3.66-2.18 5.76-2.29v4.06c-1.44.02-2.88.54-3.95 1.51-.95.86-1.48 2.15-1.48 3.46.03 1.48.65 2.91 1.73 3.91 1.03.96 2.47 1.45 3.89 1.34 1.48-.12 2.87-.84 3.79-2 1.01-1.28 1.44-2.91 1.41-4.52V0h4.15z" />
                   </svg>
                 </div>
                 <div>
@@ -792,9 +787,9 @@ export default function App() {
                 ©2024 NOT YET COFFEE STUDIO
               </p>
               <div className="flex gap-4">
-                 <div className="w-8 h-[2px] bg-white/20" />
-                 <div className="w-8 h-[2px] bg-white/20" />
-                 <div className="w-8 h-[2px] bg-white/20" />
+                <div className="w-8 h-[2px] bg-white/20" />
+                <div className="w-8 h-[2px] bg-white/20" />
+                <div className="w-8 h-[2px] bg-white/20" />
               </div>
             </div>
           </div>
