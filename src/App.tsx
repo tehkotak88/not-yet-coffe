@@ -53,7 +53,7 @@ const CatalogHeader = () => (
                 Operational Hours
               </div>
               <span className="font-display font-black text-3xl text-white tracking-widest drop-shadow-md">OPEN EVERYDAY</span>
-              <span className="font-display font-bold text-sm text-white/90 tracking-widest uppercase">MON-FRI: 08-23 | SAT-SUN: 08-00</span>
+              <span className="font-display font-bold text-sm text-white/90 tracking-widest uppercase">MON-FRI: 08:00-23:00 | SAT-SUN: 08:00-00:00</span>
             </div>
             <div className="flex items-center justify-center md:justify-end gap-6 text-[10px] font-bold uppercase tracking-widest text-white/80">
               <div className="flex items-center gap-2">
