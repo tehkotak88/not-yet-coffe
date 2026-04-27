@@ -9,7 +9,7 @@ const MENU_DATA = {
     { id: 2, name: "KOPI SALTED CARAMEL", price: "18K", best: true, desc: "Menu andalan kami: Perpaduan espresso dengan gula aren organik murni dan sentuhan sea salt yang memberikan keseimbangan rasa manis dan gurih. Diekstrak dari biji kopi Arabica berkualitas tinggi.", image: "/gambar/Kopi Salted Caramel.png" },
     { id: 1, name: "ICE KOPI NOT LATTE / HOT", price: "13K", best: false, desc: "Espresso double shot yang kuat dipadukan dengan susu segar yang dikukus hingga berbusa lembut, menciptakan tekstur creamy yang sempurna. Diseduh menggunakan biji kopi 100% Arabica.", image: "/gambar/Kopi Not Latte.png" },
     { id: 3, name: "ICE KOPI NOT SUSU / HOT", price: "13K", best: false, desc: "Sentuhan rasa klasik yang membawa nostalgia, menggabungkan kopi hitam pekat dengan kental manis premium yang kaya rasa. Menggunakan racikan biji kopi House Blend spesial kami.", image: "/gambar/Kopi Not Susu.png" },
-    { id: 4, name: "ICE AMERICANO / HOT", price: "10K", best: false, desc: "Ekstraksi espresso murni yang jernih menggunakan biji kopi 100% Arabica house roast kami, disajikan untuk kesegaran rasa kopi yang jujur with notes rasa yang khas.", image: "/gambar/americano.png" },
+    { id: 4, name: "ICE AMERICANO / HOT", price: "10K", best: false, desc: "Menggunakan biji kopi 100% Arabica dengan menggunakan kualitas beans premium blend.", image: "/gambar/americano.png" },
     { id: 8, name: "KOPI NOT PANCO (PANDAN COCONUT)", price: "15K", best: false, desc: "Perpaduan unik espresso (dari biji kopi House Blend premium) dengan pandan dan kelapa yang memberikan aroma khas dan rasa eksotis. Sempurna untuk mencari cita rasa yang berbeda dan memorable.", image: "/gambar/Kopi Not Panco dan Pandan Coconut.jpeg" },
   ],
   nonCoffee: [
