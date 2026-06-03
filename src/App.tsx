@@ -4,6 +4,68 @@ import { Coffee, Instagram, MapPin, Clock, Star, Zap, X, Home, Info, Phone, Menu
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
+const TRANSLATIONS = {
+  est: "Est. 2025",
+  nowBrewing: "Now Brewing in Makassar",
+  notYet: "NOT YET",
+  coffee: "COFFEE",
+  premiumLocalBlend: "Premium Local Blend",
+  openDaily: "Open Daily",
+  location: "Location",
+  minasaUpa: "Minasa Upa",
+  tambahEspresso: "TAMBAH ESPRESSO +2K",
+  startsFrom: "Starts From",
+  best: "Best",
+  seller: "Seller",
+  premiumSelection: "Premium Selection",
+  bestSeller: "Best Seller",
+  productDescription: "Product Description",
+  serviceStyle: "Service Style",
+  iceHotAvailable: "Ice / Hot Available",
+  availability: "Availability",
+  inStock: "In Stock",
+  filosofiTitle1: "Filosofi di Balik Setiap ",
+  filosofiTitle2: "Seduhan Kami",
+  filosofiP1_1: "Di ",
+  filosofiP1_2: "Not Yet Coffee",
+  filosofiP1_3: ", kami percaya bahwa kopi bukan sekadar minuman, melainkan sebuah perjalanan rasa yang patut dinikmati tanpa terburu-buru. Itulah mengapa setiap cangkir yang kami sajikan adalah hasil dari dedikasi tinggi, mulai dari pemilihan biji kopi terbaik hingga metode penyeduhan yang presisi untuk mengeluarkan profil rasa yang paling autentik.",
+  filosofiP2_1: "Berlokasi di ketenangan ",
+  filosofiP2_2: "BTN Minasa Upa",
+  filosofiP2_3: ", kedai kami dirancang sebagai pelarian sejenak dari hiruk-pikuk rutinitas. Kami menyediakan ruang yang bukan hanya sekadar tempat duduk, tapi sebuah ekosistem kreatif di mana Anda bisa bekerja dengan fokus atau berbagi tawa bersama komunitas pecinta kopi Makassar lainnya.",
+  filosofiP3_1: "Kami mengundang Anda untuk berkunjung setiap ",
+  filosofiP3_2: "hari",
+  filosofiP3_3: ", mulai pukul 08:00 pagi. Khusus pada ",
+  filosofiP3_4: "akhir pekan",
+  filosofiP3_5: ", kami buka hingga pukul 00:00 malam untuk menemani waktu santai Anda lebih lama. Jangan lupa untuk mengikuti linimasa kami di Instagram guna mendapatkan info promo eksklusif dan menjadi bagian dari semangat komunitas kami yang terus tumbuh. Selamat menikmati waktu tunggu Anda bersama kami.",
+  notYetCoffee: "NOTYET COFFEE",
+  visitUs: "Visit Us",
+  ourLocation: "OUR LOCATION",
+  btnMinasaUpaLine1: "BTN MINASA UPA BLOK F 15 / 14,",
+  makassar: "MAKASSAR",
+  chatWithUs: "Chat With Us",
+  officialGuide: "Official Guide",
+  informasi: "INFORMASI",
+  coffeeSeries: "COFFEE SERIES",
+  matchaSeries: "MATCHA SERIES",
+  nonCoffee: "NON COFFEE",
+  satuLiter: "SATU LITER",
+  whatsAppOrder: "WhatsApp Order",
+  followUsForUpdates: "Follow us for updates",
+  btnMinasaUpaFull: "BTN MINASA UPA BLOK F 15 / 14",
+  visitOurLocalOutlet: "Visit our local outlet",
+  tambahEspresso2k: "*TAMBAH ESPRESSO 2K*",
+  setiapHari: "* SETIAP HARI *",
+  premiumBlend: "* PREMIUM BLEND *",
+  bestSellerBadge: "★ BEST SELLER",
+  closeModal: "Close Modal",
+  chatOnWhatsApp: "Chat on WhatsApp",
+  notYetCoffeeLogoAlt: "Not Yet Coffee Logo",
+  nyLogoAlt: "NY Logo",
+  logoAlt: "Logo",
+  phoneNumber: "+62 881-8161-616",
+  instagramHandle: "@notyetcoffee"
+};
+
 const MENU_DATA = {
   coffee: [
     { id: 16, name: "KOPI NOT AREN", price: "13K", best: true, desc: "Kopi susu dengan paduan gula aren asli yang memberikan rasa manis alami dan aroma kopi yang kuat. Diseduh menggunakan ekstraksi biji kopi House Blend (Arabica & Robusta) pilihan nusantara.", image: "/gambar/kopi not aren.jpeg" },
@@ -45,12 +107,12 @@ const CatalogHeader = () => (
           className="flex flex-col relative"
         >
           <div className="bg-white p-6 rounded-[32px] shadow-[20px_20px_60px_rgba(0,0,0,0.3)] border-4 border-white/50 relative group">
-            <img src="/gambar/logo.jpeg" alt="Not Yet Coffee Logo" className="w-40 h-40 object-contain rounded-2xl" />
+            <img src="/gambar/logo.jpeg" alt={TRANSLATIONS.notYetCoffeeLogoAlt} className="w-40 h-40 object-contain rounded-2xl" />
             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
           </div>
           {/* Badge */}
           <div className="absolute -bottom-4 -right-4 bg-white text-brand-red px-4 py-2 rounded-2xl shadow-xl font-black text-[10px] uppercase tracking-widest rotate-6 border-2 border-brand-red/10">
-            Est. 2025
+            {TRANSLATIONS.est}
           </div>
         </motion.div>
 
@@ -66,12 +128,12 @@ const CatalogHeader = () => (
                 animate={{ opacity: 1, scale: 1 }}
                 className="bg-white text-brand-red px-5 py-1.5 rounded-full font-black text-[11px] uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(255,255,255,0.2)]"
               >
-                Now Brewing in Makassar
+                {TRANSLATIONS.nowBrewing}
               </motion.div>
               <h1 className="font-display font-black text-5xl md:text-7xl text-white tracking-tighter leading-none drop-shadow-2xl">
-                NOT YET<br /><span className="text-white/40 italic">COFFEE</span>
+                {TRANSLATIONS.notYet}<br /><span className="text-white/40 italic">{TRANSLATIONS.coffee}</span>
               </h1>
-              <p className="font-display font-bold text-sm text-white/60 tracking-[0.4em] uppercase mt-2">Premium Local Blend</p>
+              <p className="font-display font-bold text-sm text-white/60 tracking-[0.4em] uppercase mt-2">{TRANSLATIONS.premiumLocalBlend}</p>
             </div>
             
             <div className="flex items-center justify-center md:justify-end gap-8 pt-4">
@@ -80,8 +142,8 @@ const CatalogHeader = () => (
                   <Clock className="w-4 h-4 text-white" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[9px] font-black text-white/40 uppercase tracking-widest leading-none mb-1">Open Daily</p>
-                  <p className="text-[11px] font-bold text-white uppercase tracking-wider">08:00 - 23:00</p>
+                  <p className="text-[9px] font-black text-white/40 uppercase tracking-widest leading-none mb-1">{TRANSLATIONS.openDaily}</p>
+                  <p className="text-[11px] font-bold text-white uppercase tracking-wider">{"08:00 - 23:00"}</p>
                 </div>
               </div>
               <div className="h-8 w-[1px] bg-white/10" />
@@ -90,8 +152,8 @@ const CatalogHeader = () => (
                   <MapPin className="w-4 h-4 text-white" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[9px] font-black text-white/40 uppercase tracking-widest leading-none mb-1">Location</p>
-                  <p className="text-[11px] font-bold text-white uppercase tracking-wider">Minasa Upa</p>
+                  <p className="text-[9px] font-black text-white/40 uppercase tracking-widest leading-none mb-1">{TRANSLATIONS.location}</p>
+                  <p className="text-[11px] font-bold text-white uppercase tracking-wider">{TRANSLATIONS.minasaUpa}</p>
                 </div>
               </div>
             </div>
@@ -106,15 +168,15 @@ const CatalogHeader = () => (
         className="bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-3xl flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 shadow-2xl max-w-4xl mx-auto"
       >
         <span className="text-white font-black italic tracking-[0.2em] text-[10px] uppercase">
-          * SETIAP HARI *
+          {TRANSLATIONS.setiapHari}
         </span>
         <div className="h-6 w-[2px] bg-white/20 hidden md:block" />
         <span className="bg-white text-brand-red px-4 py-1 text-[11px] font-black uppercase rotate-1 rounded shadow-lg">
-          TAMBAH ESPRESSO +2K
+          {TRANSLATIONS.tambahEspresso}
         </span>
         <div className="h-6 w-[2px] bg-white/20 hidden md:block" />
         <span className="text-white font-black italic tracking-[0.2em] text-[10px] uppercase">
-          * PREMIUM BLEND *
+          {TRANSLATIONS.premiumBlend}
         </span>
       </motion.div>
     </div>
@@ -129,7 +191,7 @@ const PriceTag = ({ price }: { price: string }) => (
     className="relative z-20"
   >
     <div className="bg-white text-brand-red px-4 py-2 sm:px-6 sm:py-3 rounded-xl sm:rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.3)] border-2 border-brand-red/5 flex flex-col items-center">
-      <span className="text-[7px] sm:text-[8px] font-black uppercase tracking-[0.3em] opacity-40 mb-0.5 sm:mb-1">Starts From</span>
+      <span className="text-[7px] sm:text-[8px] font-black uppercase tracking-[0.3em] opacity-40 mb-0.5 sm:mb-1">{TRANSLATIONS.startsFrom}</span>
       <span className="font-display font-black text-xl sm:text-2xl tracking-tighter leading-none">
         {price}
       </span>
@@ -148,8 +210,8 @@ const BestSellerSign = () => (
       <div className="bg-white px-4 py-2 rounded-[14px] flex items-center gap-2 border-2 border-[#FFD700]/20">
         <Star className="w-4 h-4 text-[#FFD700] fill-[#FFD700]" />
         <div className="flex flex-col">
-          <span className="font-display font-black text-[9px] text-black tracking-widest leading-none uppercase">Best</span>
-          <span className="font-display font-black text-[9px] text-black tracking-widest leading-none uppercase">Seller</span>
+          <span className="font-display font-black text-[9px] text-black tracking-widest leading-none uppercase">{TRANSLATIONS.best}</span>
+          <span className="font-display font-black text-[9px] text-black tracking-widest leading-none uppercase">{TRANSLATIONS.seller}</span>
         </div>
       </div>
     </div>
@@ -274,7 +336,7 @@ const MenuItem = ({ item, onClick }: { item: any, onClick: () => void, key?: str
         <div className="flex flex-col items-center gap-2 mb-3 sm:hidden">
           {item.best && (
             <span className="text-[8px] bg-amber-400 text-black px-3 py-1 rounded-full font-black uppercase tracking-[0.2em] shadow-lg">
-              ★ BEST SELLER
+              {TRANSLATIONS.bestSellerBadge}
             </span>
           )}
           <span className="bg-white text-brand-red px-5 py-1.5 rounded-full font-black text-xs shadow-xl tracking-tighter">
@@ -452,7 +514,7 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
         animate={{ scale: 1, rotate: 0 }}
         onClick={onClose}
         className="fixed top-4 right-4 md:top-10 md:right-10 z-[1001] bg-white text-brand-red p-3 md:p-4 rounded-full shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:scale-110 active:scale-95 transition-all group"
-        aria-label="Close Modal"
+        aria-label={TRANSLATIONS.closeModal}
       >
         <X className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-90 transition-transform duration-300" />
       </motion.button>
@@ -500,11 +562,11 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
             <div className="mb-8 pt-2 md:pt-0">
               <div className="flex items-center gap-3 mb-4">
                 <span className="bg-brand-red text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-red/20">
-                  Premium Selection
+                  {TRANSLATIONS.premiumSelection}
                 </span>
                 {item.best && (
                   <span className="bg-amber-400 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-amber-400/20">
-                    Best Seller
+                    {TRANSLATIONS.bestSeller}
                   </span>
                 )}
               </div>
@@ -521,20 +583,20 @@ const MenuModal = ({ item, onClose }: { item: any, onClose: () => void }) => {
 
             <div className="space-y-8">
               <div>
-                <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-3">Product Description</h4>
+                <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-3">{TRANSLATIONS.productDescription}</h4>
                 <p className="font-sans text-brand-red/80 text-base leading-relaxed italic font-medium">
-                  "{item.desc}"
+                  {`"${item.desc}"`}
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-8 py-8 border-y border-brand-red/10">
                 <div>
-                  <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">Service Style</h4>
-                  <p className="font-black text-sm text-brand-red uppercase tracking-widest">Ice / Hot Available</p>
+                  <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">{TRANSLATIONS.serviceStyle}</h4>
+                  <p className="font-black text-sm text-brand-red uppercase tracking-widest">{TRANSLATIONS.iceHotAvailable}</p>
                 </div>
                 <div>
-                  <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">Availability</h4>
-                  <p className="font-black text-sm text-brand-red uppercase tracking-widest">In Stock</p>
+                  <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-black/20 mb-2">{TRANSLATIONS.availability}</h4>
+                  <p className="font-black text-sm text-brand-red uppercase tracking-widest">{TRANSLATIONS.inStock}</p>
                 </div>
               </div>
 
@@ -605,18 +667,18 @@ const InfoParagraph = () => {
 
         <div style={{ transform: "translateZ(30px)" }} className="relative z-10">
           <h3 className="font-display font-black text-white text-3xl md:text-4xl mb-8 leading-tight uppercase tracking-tight">
-            Filosofi di Balik Setiap <span className="text-white/40">Seduhan Kami</span>
+            {TRANSLATIONS.filosofiTitle1}<span className="text-white/40">{TRANSLATIONS.filosofiTitle2}</span>
           </h3>
 
           <div className="space-y-6 font-sans text-white/80 text-sm md:text-base leading-relaxed italic">
             <p>
-              Di <strong>Not Yet Coffee</strong>, kami percaya bahwa kopi bukan sekadar minuman, melainkan sebuah perjalanan rasa yang patut dinikmati tanpa terburu-buru. Itulah mengapa setiap cangkir yang kami sajikan adalah hasil dari dedikasi tinggi, mulai dari pemilihan biji kopi terbaik hingga metode penyeduhan yang presisi untuk mengeluarkan profil rasa yang paling autentik.
+              {TRANSLATIONS.filosofiP1_1}<strong>{TRANSLATIONS.filosofiP1_2}</strong>{TRANSLATIONS.filosofiP1_3}
             </p>
             <p>
-              Berlokasi di ketenangan <strong>BTN Minasa Upa</strong>, kedai kami dirancang sebagai pelarian sejenak dari hiruk-pikuk rutinitas. Kami menyediakan ruang yang bukan hanya sekadar tempat duduk, tapi sebuah ekosistem kreatif di mana Anda bisa bekerja dengan fokus atau berbagi tawa bersama komunitas pecinta kopi Makassar lainnya.
+              {TRANSLATIONS.filosofiP2_1}<strong>{TRANSLATIONS.filosofiP2_2}</strong>{TRANSLATIONS.filosofiP2_3}
             </p>
             <p>
-              Kami mengundang Anda untuk berkunjung setiap <strong>hari</strong>, mulai pukul 08:00 pagi. Khusus pada <strong>akhir pekan</strong>, kami buka hingga pukul 00:00 malam untuk menemani waktu santai Anda lebih lama. Jangan lupa untuk mengikuti linimasa kami di Instagram guna mendapatkan info promo eksklusif dan menjadi bagian dari semangat komunitas kami yang terus tumbuh. Selamat menikmati waktu tunggu Anda bersama kami.
+              {TRANSLATIONS.filosofiP3_1}<strong>{TRANSLATIONS.filosofiP3_2}</strong>{TRANSLATIONS.filosofiP3_3}<strong>{TRANSLATIONS.filosofiP3_4}</strong>{TRANSLATIONS.filosofiP3_5}
             </p>
           </div>
         </div>
@@ -666,9 +728,9 @@ const Navbar = () => {
             }}
           >
             <div className="bg-white p-1.5 rounded-xl rotate-[-8deg] group-hover:rotate-0 transition-all duration-500 shadow-lg overflow-hidden shrink-0">
-              <img src="/gambar/logo.jpeg" alt="NY Logo" className="w-8 h-8 object-cover" />
+              <img src="/gambar/logo.jpeg" alt={TRANSLATIONS.nyLogoAlt} className="w-8 h-8 object-cover" />
             </div>
-            <span className="font-display font-black text-white text-base tracking-tighter hidden sm:block">NOTYET COFFEE</span>
+            <span className="font-display font-black text-white text-base tracking-tighter hidden sm:block">{TRANSLATIONS.notYetCoffee}</span>
           </motion.div>
 
           <div className="hidden md:flex items-center gap-10">
@@ -722,7 +784,7 @@ const Navbar = () => {
                 animate={{ scale: 1, rotate: 0 }}
                 className="bg-white p-3 rounded-2xl shadow-xl mb-4"
               >
-                <img src="/gambar/logo.jpeg" alt="Logo" className="w-20 h-20 object-contain rounded-xl" />
+                <img src="/gambar/logo.jpeg" alt={TRANSLATIONS.logoAlt} className="w-20 h-20 object-contain rounded-xl" />
               </motion.div>
               {navLinks.map((link, i) => (
                 <motion.a
@@ -760,10 +822,10 @@ const GoogleMap = () => (
   <section id="contact" className="mt-32 mb-20">
     <div className="relative mb-16 text-center">
       <span className="bg-white text-brand-red px-6 py-2 rounded-full font-black text-xs uppercase tracking-[0.4em] mb-4 inline-block shadow-xl">
-        Visit Us
+        {TRANSLATIONS.visitUs}
       </span>
       <h2 className="font-display font-black text-6xl md:text-[80px] leading-tight text-white block">
-        OUR LOCATION
+        {TRANSLATIONS.ourLocation}
       </h2>
     </div>
 
@@ -786,10 +848,10 @@ const GoogleMap = () => (
       {/* Interactive Overlay Info */}
       <div className="absolute bottom-10 left-10 z-10 hidden md:block">
         <div className="bg-white p-6 rounded-3xl shadow-2xl border-4 border-brand-red/10 max-w-xs transform -rotate-2">
-          <h4 className="font-display font-black text-brand-red text-xl uppercase mb-2">Not Yet Coffee</h4>
+          <h4 className="font-display font-black text-brand-red text-xl uppercase mb-2">{TRANSLATIONS.notYetCoffee}</h4>
           <p className="text-brand-red/70 text-[10px] font-black uppercase leading-relaxed">
-            BTN MINASA UPA BLOK F 15 / 14,<br />
-            MAKASSAR
+            {TRANSLATIONS.btnMinasaUpaLine1}<br />
+            {TRANSLATIONS.makassar}
           </p>
         </div>
       </div>
@@ -809,11 +871,11 @@ const FloatingSocialButtons = () => (
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       className="bg-[#25D366] text-white p-5 rounded-full shadow-[0_20px_50px_rgba(37,211,102,0.4)] flex items-center justify-center group"
-      aria-label="Chat on WhatsApp"
+      aria-label={TRANSLATIONS.chatOnWhatsApp}
     >
       <MessageCircle className="w-8 h-8 fill-white/20" />
       <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 font-display font-black text-xs uppercase tracking-widest whitespace-nowrap">
-        Chat With Us
+        {TRANSLATIONS.chatWithUs}
       </span>
     </motion.a>
   </div>
@@ -866,10 +928,10 @@ export default function App() {
         <section id="about" className="mb-32 mt-32 md:mt-12">
           <div className="relative mb-16 text-center">
             <span className="bg-white text-brand-red px-6 py-2 rounded-full font-black text-xs uppercase tracking-[0.4em] mb-4 inline-block shadow-xl">
-              Official Guide
+              {TRANSLATIONS.officialGuide}
             </span>
             <h2 className="font-display font-black text-6xl md:text-[80px] leading-tight text-white block">
-              INFORMASI
+              {TRANSLATIONS.informasi}
             </h2>
           </div>
 
@@ -889,7 +951,7 @@ export default function App() {
         <section id="menu" className="mb-24 scroll-mt-24">
           <div className="relative mb-16 text-center">
             <h2 className="font-display font-black text-6xl md:text-8xl tracking-tight text-white block">
-              COFFEE SERIES
+              {TRANSLATIONS.coffeeSeries}
             </h2>
             <div className="h-4 bg-white/10 w-[80%] mx-auto -mt-6 rounded-full blur-xl" />
           </div>
@@ -905,7 +967,7 @@ export default function App() {
         <section className="mb-32">
           <div className="relative mb-16 text-center">
             <h2 className="font-display font-black text-6xl md:text-8xl tracking-tight text-white block">
-              MATCHA SERIES
+              {TRANSLATIONS.matchaSeries}
             </h2>
             <div className="h-4 bg-white/10 w-[80%] mx-auto -mt-6 rounded-full blur-xl" />
           </div>
@@ -921,7 +983,7 @@ export default function App() {
         <section className="mb-32">
           <div className="relative mb-16 text-center">
             <h2 className="font-display font-black text-6xl md:text-8xl tracking-tight text-white block">
-              NON COFFEE
+              {TRANSLATIONS.nonCoffee}
             </h2>
             <div className="h-4 bg-white/10 w-[80%] mx-auto -mt-6 rounded-full blur-xl" />
           </div>
@@ -937,7 +999,7 @@ export default function App() {
         <section className="mb-32">
           <div className="relative mb-16 text-center">
             <h2 className="font-display font-black text-6xl md:text-8xl tracking-tight text-white block">
-              SATU LITER
+              {TRANSLATIONS.satuLiter}
             </h2>
             <div className="h-4 bg-white/10 w-[80%] mx-auto -mt-6 rounded-full blur-xl" />
           </div>
@@ -966,8 +1028,8 @@ export default function App() {
                   <MessageCircle className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-black text-white text-sm tracking-widest uppercase">+62 881-8161-616</h4>
-                  <p className="text-xs text-white/50 font-bold uppercase group-hover:text-white transition-colors">WhatsApp Order</p>
+                  <h4 className="font-black text-white text-sm tracking-widest uppercase">{TRANSLATIONS.phoneNumber}</h4>
+                  <p className="text-xs text-white/50 font-bold uppercase group-hover:text-white transition-colors">{TRANSLATIONS.whatsAppOrder}</p>
                 </div>
               </a>
               <a
@@ -980,8 +1042,8 @@ export default function App() {
                   <Instagram className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-black text-white text-sm tracking-widest uppercase">@notyetcoffee</h4>
-                  <p className="text-xs text-white/50 font-bold uppercase group-hover:text-white transition-colors">Follow us for updates</p>
+                  <h4 className="font-black text-white text-sm tracking-widest uppercase">{TRANSLATIONS.instagramHandle}</h4>
+                  <p className="text-xs text-white/50 font-bold uppercase group-hover:text-white transition-colors">{TRANSLATIONS.followUsForUpdates}</p>
                 </div>
               </a>
 
@@ -990,8 +1052,8 @@ export default function App() {
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-black text-white text-sm tracking-widest uppercase leading-tight">BTN MINASA UPA BLOK F 15 / 14</h4>
-                  <p className="text-xs text-white/50 font-bold uppercase mt-1">Visit our local outlet</p>
+                  <h4 className="font-black text-white text-sm tracking-widest uppercase leading-tight">{TRANSLATIONS.btnMinasaUpaFull}</h4>
+                  <p className="text-xs text-white/50 font-bold uppercase mt-1">{TRANSLATIONS.visitOurLocalOutlet}</p>
                 </div>
               </div>
             </div>
@@ -1011,7 +1073,7 @@ export default function App() {
                 whileHover={{ scale: 1.1, rotate: 0 }}
                 className="inline-block bg-white text-brand-red px-8 py-4 rounded-3xl font-display font-black text-2xl uppercase italic shadow-[0_20px_50px_rgba(255,255,255,0.3)] rotate-[-2deg] border-4 border-white active:scale-95 transition-transform cursor-default select-none"
               >
-                *TAMBAH ESPRESSO 2K*
+                {TRANSLATIONS.tambahEspresso2k}
               </motion.div>
             </div>
 
